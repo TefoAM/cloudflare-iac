@@ -5,6 +5,15 @@ terraform {
       version = "~> 4"
     }
   }
+  
+  backend "remote" {
+    organization = "tefo-life"
+    workspaces {
+      name = "cloudflare-api-github"
+    }
+    
+  }
+
 }
 resource "cloudflare_record" "terraform_managed_resource_f9bf3529ef83572efab975d717e630c6" {
   name    = "tefo.life"
