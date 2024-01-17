@@ -4,8 +4,6 @@ terraform {
       source  = "cloudflare/cloudflare"
       version = "~> 4"
     }
-
-
   }
 
   backend "remote" {
@@ -20,6 +18,7 @@ terraform {
 provider "cloudflare" {
   api_token = "iZKSeN_T0ESSFH0bQijl1su-Uvuh64lznAURk_b4"
 }
+
 resource "cloudflare_record" "terraform_managed_resource_f9bf3529ef83572efab975d717e630c6" {
   name    = "tefo.life"
   proxied = true
