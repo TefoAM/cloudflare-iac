@@ -5,6 +5,7 @@ terraform {
       version = "~> 4"
     }
   }
+
   backend "remote" {
     organization = "tefo-life"
     workspaces {
@@ -62,4 +63,15 @@ resource "cloudflare_record" "terraform_managed_resource_7f25c5be93e366e4bf8ec23
   type    = "TXT"
   value   = "\"MS=ms73782001\""
   zone_id = "c6df5ea3259930bb26618693600e7e3d"
+}
+
+
+resource "cloudflare_zone_settings_override" "example-com-settings" {
+  zone_id = cloudflare_record.terraform_managed_resource_f9bf3529ef83572efab975d717e630c6.zone_id
+
+  settings {
+    tls_1_3                  = "on"
+    automatic_https_rewrites = "on"
+    ssl                      = "strict"
+  }
 }
