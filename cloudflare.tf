@@ -1,19 +1,24 @@
 terraform {
   required_providers {
     cloudflare = {
-      source = "cloudflare/cloudflare"
+      source  = "cloudflare/cloudflare"
       version = "~> 4"
     }
+
+
   }
-  
+
   backend "remote" {
     organization = "tefo-life"
     workspaces {
       name = "cloudflare-api-github"
     }
-    
+
   }
 
+}
+provider "cloudflare" {
+  api_token = "iZKSeN_T0ESSFH0bQijl1su-Uvuh64lznAURk_b4"
 }
 resource "cloudflare_record" "terraform_managed_resource_f9bf3529ef83572efab975d717e630c6" {
   name    = "tefo.life"
