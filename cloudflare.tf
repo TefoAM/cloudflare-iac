@@ -67,72 +67,12 @@ resource "cloudflare_record" "terraform_managed_resource_7f25c5be93e366e4bf8ec23
 }
 
 
-# resource "cloudflare_zone_settings_override" "example-com-settings" {
-#   zone_id = cloudflare_record.terraform_managed_resource_f9bf3529ef83572efab975d717e630c6.zone_id
-
-#   settings {
-#     tls_1_3                  = "on"
-#     automatic_https_rewrites = "on"
-#     ssl                      = "strict"
-#   }
-# }
-
 resource "cloudflare_zone_settings_override" "example-com-settings" {
-    zone_id           = "c6df5ea3259930bb26618693600e7e3d"
-    settings {
-        always_online               = "off"
-        always_use_https            = "on"
-        automatic_https_rewrites    = "on"
-        binary_ast                  = "off"
-        brotli                      = "on"
-        browser_cache_ttl           = 14400
-        browser_check               = "on"
-        cache_level                 = "aggressive"
-        challenge_ttl               = 1800
-        ciphers                     = []
-        cname_flattening            = "flatten_at_root"
-        development_mode            = "off"
-        early_hints                 = "off"
-        email_obfuscation           = "on"
-        filter_logs_to_cloudflare   = "off"
-        fonts                       = "off"
-        h2_prioritization           = "off"
-        hotlink_protection          = "off"
-        http3                       = "on"
-        ip_geolocation              = "on"
-        ipv6                        = "on"
-        log_to_cloudflare           = "on"
-        max_upload                  = 100
-        min_tls_version             = "1.0"
-        opportunistic_encryption    = "on"
-        opportunistic_onion         = "on"
-        orange_to_orange            = "off"
-        origin_max_http_version     = "2"
-        privacy_pass                = "on"
-        pseudo_ipv4                 = "off"
-        rocket_loader               = "off"
-        security_level              = "medium"
-        server_side_exclude         = "on"
-        ssl                         = "full"
-        tls_1_3                     = "on"
-        tls_client_auth             = "off"
-        visitor_ip                  = "on"
-        waf                         = "off"
-        websockets                  = "on"
-        zero_rtt                    = "off"
+  zone_id = cloudflare_record.terraform_managed_resource_f9bf3529ef83572efab975d717e630c6.zone_id
 
-        minify {
-            css  = "off"
-            html = "off"
-            js   = "off"
-        }
-
-        security_header {
-            enabled            = false
-            include_subdomains = false
-            max_age            = 0
-            nosniff            = false
-            preload            = false
-        }
-    }
+  settings {
+    tls_1_3                  = "on"
+    automatic_https_rewrites = "on"
+    ssl                      = "strict"
+  }
 }
