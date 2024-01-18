@@ -51,7 +51,7 @@ resource "cloudflare_record" "terraform_managed_resource_659113188270238bdf9cd11
 
 resource "cloudflare_record" "tefoam_github_io_profile" {
   comment = "This is from github"
-  name    = "www.tefo.life"
+  name    = "cv"
   proxied = true
   ttl     = 1
   type    = "CNAME"
