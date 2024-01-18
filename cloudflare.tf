@@ -48,6 +48,17 @@ resource "cloudflare_record" "terraform_managed_resource_76c628ddd39af5d9fec31b2
   zone_id = "c6df5ea3259930bb26618693600e7e3d"
 }
 
+
+resource "cloudflare_record" "terraform_managed_resource_76c628ddd39af5d9fec31b267875624c" {
+  comment = "This is from github"
+  name    = "tefo.life"
+  proxied = true
+  ttl     = 1
+  type    = "CNAME"
+  value   = "tefoam.github.io"
+  zone_id = "c6df5ea3259930bb26618693600e7e3d"
+}
+
 resource "cloudflare_record" "terraform_managed_resource_1c96563dfc98df4ab3583f93b1bba7b1" {
   name    = "www"
   proxied = true
@@ -65,3 +76,4 @@ resource "cloudflare_record" "terraform_managed_resource_7f25c5be93e366e4bf8ec23
   value   = "\"MS=ms73782001\""
   zone_id = "c6df5ea3259930bb26618693600e7e3d"
 }
+
