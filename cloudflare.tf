@@ -49,7 +49,7 @@ resource "cloudflare_record" "terraform_managed_resource_76c628ddd39af5d9fec31b2
 }
 
 
-resource "cloudflare_record" "terraform_managed_resource_76c628ddd39af5d9fec31b267875624c" {
+resource "cloudflare_record" "tefoam_github_io" {
   comment = "This is from github"
   name    = "tefo.life"
   proxied = true
