@@ -44,21 +44,3 @@ resource "cloudflare_record" "terraform_managed_resource_7f25c5be93e366e4bf8ec23
   value   = "\"MS=ms73782001\""
   zone_id = "c6df5ea3259930bb26618693600e7e3d"
 }
-
-# Pages project managing project source
-resource "cloudflare_pages_project" "profile_project" {
-  account_id        = "57cfd03a9dc176b07c4a598dc25c844f"
-  name              = "profile"
-  production_branch = "main"
-}
-
-# create a subdomain "profile.tefo.life" whose value is "profile_project" domain
-
-resource "cloudflare_record" "profile_project_subdomain" {
-  name    = "profile"
-  proxied = true
-  ttl     = 1
-  type    = "CNAME"
-  value   = cloudflare_pages_project.profile_project.domains.0
-  zone_id = "c6df5ea3259930bb26618693600e7e3d"
-}
