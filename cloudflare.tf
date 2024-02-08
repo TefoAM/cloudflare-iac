@@ -51,3 +51,14 @@ resource "cloudflare_pages_project" "profile_project" {
   name              = "profile"
   production_branch = "main"
 }
+
+# create a subdomain "profile.tefo.life" whose value is "profile_project" domain
+
+resource "cloudflare_record" "profile_project_subdomain" {
+  name    = "profile"
+  proxied = true
+  ttl     = 1
+  type    = "CNAME"
+  value   = cloudflare_pages_project.profile_project.domains.0
+  zone_id = "c6df5ea3259930bb26618693600e7e3d"
+}
