@@ -46,22 +46,8 @@ resource "cloudflare_record" "terraform_managed_resource_7f25c5be93e366e4bf8ec23
 }
 
 # Pages project managing project source
-resource "cloudflare_pages_project" "source_config" {
+resource "cloudflare_pages_project" "profile_project" {
   account_id        = "57cfd03a9dc176b07c4a598dc25c844f"
   name              = "profile"
   production_branch = "main"
-  source {
-    type = "github"
-    config {
-      owner                         = "TefoAM"
-      repo_name                     = "cloudflare-iac"
-      production_branch             = "main"
-      pr_comments_enabled           = true
-      deployments_enabled           = true
-      production_deployment_enabled = true
-      preview_deployment_setting    = "custom"
-      preview_branch_includes       = ["dev", "preview"]
-      preview_branch_excludes       = ["main", "prod"]
-    }
-  }
 }
