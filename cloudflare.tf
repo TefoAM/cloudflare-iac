@@ -48,7 +48,7 @@ resource "cloudflare_record" "terraform_managed_resource_7f25c5be93e366e4bf8ec23
 # Pages project managing project source
 resource "cloudflare_pages_project" "source_config" {
   account_id        = "57cfd03a9dc176b07c4a598dc25c844f"
-  name              = "profile-here"
+  name              = "profile"
   production_branch = "main"
   source {
     type = "github"
