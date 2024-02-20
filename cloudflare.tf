@@ -85,6 +85,6 @@ resource "cloudflare_record" "webapp_subdomain" {
   proxied = true
   ttl     = 1
   type    = "CNAME"
-  value   = cloudflare_pages_domain.webapp.domain
+  value   = cloudflare_pages_project.webapp-project.domains.0
   zone_id = "c6df5ea3259930bb26618693600e7e3d"
 }
