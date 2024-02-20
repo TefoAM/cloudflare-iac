@@ -61,3 +61,30 @@ resource "cloudflare_record" "profile_project_subdomain" {
   value   = cloudflare_pages_project.profile_project1.domains.0
   zone_id = "c6df5ea3259930bb26618693600e7e3d"
 }
+
+resource "cloudflare_pages_project" "test-app-project" {
+  name = "test-app"
+  account_id = "57cfd03a9dc176b07c4a598dc25c844f"
+  production_branch = "main"
+}
+
+resource "cloudflare_pages_project" "webapp-project" {
+  name = "webapp-pages"
+  account_id = "57cfd03a9dc176b07c4a598dc25c844f"
+  production_branch = "main"
+}
+
+resource "cloudflare_pages_domain" "webapp" {
+  account_id   = "f037e56e89293a057740de681ac9abbe"
+  project_name = "webapp-pages"
+  domain       = "webapp.tefo.life"
+}
+
+resource "cloudflare_record" "webapp_subdomain" {
+  name    = "webapp"
+  proxied = true
+  ttl     = 1
+  type    = "CNAME"
+  value   = cloudflare_pages_domain.webapp.domain.0
+  zone_id = "c6df5ea3259930bb26618693600e7e3d"
+}
