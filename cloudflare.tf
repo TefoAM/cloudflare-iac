@@ -13,9 +13,10 @@ terraform {
     }
   }
 }
+
 provider "cloudflare" {
-  api_token = "06db35011e65405f701d0c4c0e15beb16901b"
-  # api_token = "iZKSeN_T0ESSFH0bQijl1su-Uvuh64lznAURk_b4"
+  # api_token = "06db35011e65405f701d0c4c0e15beb16901b"
+  api_token = "iZKSeN_T0ESSFH0bQijl1su-Uvuh64lznAURk_b4"
 }
 
 resource "cloudflare_record" "tefoam_github_io_profile" {
