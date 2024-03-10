@@ -94,11 +94,13 @@ resource "cloudflare_record" "webapp_subdomain" {
   zone_id = "c6df5ea3259930bb26618693600e7e3d"
 }
 
+/*
+# this is creating a zone. Commented out
 resource "cloudflare_zone" "tefo_life_zone" {
   zone = "tefo.life"
   account_id = "57cfd03a9dc176b07c4a598dc25c844f"
 }
-
+*/
 resource "cloudflare_zone_dnssec" "tefo_life_dnssec" {
   zone_id = "c6df5ea3259930bb26618693600e7e3d"
 }
